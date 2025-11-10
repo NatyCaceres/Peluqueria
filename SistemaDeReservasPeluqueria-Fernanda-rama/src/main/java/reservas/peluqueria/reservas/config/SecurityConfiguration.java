@@ -32,13 +32,24 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(req -> {
                     req.requestMatchers("/auth/**").permitAll()
                             .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
-                            .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()              // preflight CORS
-                            .requestMatchers(HttpMethod.POST, "/reservas/crear").permitAll()     // <<< SOLO PARA PROBAR
+                            .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                            // 🧾 CONSULTAS PÚBLICAS (ver servicios o trabajadores)
                             .requestMatchers(HttpMethod.GET,
                                     "/servicios/**",
-                                    "/trabajadores-servicios/**",
-                                    "/horarios-disponibles/**",
-                                    "/reservas/trabajador/**").permitAll()
+                                    "/trabajadores-servicios/**"
+                            ).permitAll()
+
+                            // 👤 CLIENTE
+                            .requestMatchers("/reservas/**").permitAll()
+
+                            // 🧰 TRABAJADOR
+                            .requestMatchers("/trabajador/**").permitAll()
+
+                            // 🏢 RECEPCIONISTA / ADMINISTRADOR
+                            .requestMatchers("/admin/**").permitAll()
+
+                            // 🔒 CUALQUIER OTRO REQUIERE AUTENTICACIÓN
                             .anyRequest().authenticated();
                 })
                 //luego de terminar de desarrollar debo colocar este bloque

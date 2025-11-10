@@ -1,5 +1,6 @@
 package reservas.peluqueria.reservas.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +25,9 @@ public class Reserva {
     private Integer idServicio;
 
     private LocalDate fecha;
+    @JsonFormat(pattern = "HH:mm")
     private LocalTime horaInicio;
+    @JsonFormat(pattern = "HH:mm")
     private LocalTime horaFin;
 
     private String estadoReserva; // confirmada, cancelada, completada
