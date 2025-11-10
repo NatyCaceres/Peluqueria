@@ -8,6 +8,7 @@ public record DatosReserva(
         Integer idServicio,
         LocalDate fecha,
         LocalTime horaInicio,
-        LocalTime horaFin
+        LocalTime horaFin,
+        String tipoReserva // opcional: "web" o "recepcionista
 ) {
 }
