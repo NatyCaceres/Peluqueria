@@ -27,9 +27,4 @@ jobs:
         working-directory: SistemaDeReservasPeluqueria-Fernanda-rama
         run: mvn clean package -DskipTests
 
-     
-      - name: 🐳 Construir imagen Docker
-        run: docker build -t reservas-app:latest -f SistemaDeReservasPeluqueria-Fernanda-rama/Dockerfile .
-
-      - name: ✅ Verificar imagen creada
-        run: docker images | grep reservas-app
+   
