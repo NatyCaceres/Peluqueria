@@ -1,5 +1,5 @@
 # Sistema de Reservas Peluquería
-Editado por: Natacha
+Editado por: Fernanda y Natacha
 
 ## 📚 Sobre el proyecto
 
