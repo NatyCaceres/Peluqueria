@@ -24,11 +24,11 @@ jobs:
           java-version: '21'
 
       - name: 🧱 Construir backend con Maven
-        working-directory: backend
+        working-directory: SistemaDeReservasPeluqueria-Fernanda-rama
         run: mvn clean package -DskipTests
 
       - name: 🧪 Ejecutar pruebas unitarias
-        working-directory: backend
+        working-directory: SistemaDeReservasPeluqueria-Fernanda-rama
         run: mvn test
 
       - name: 🐳 Construir imagen Docker
