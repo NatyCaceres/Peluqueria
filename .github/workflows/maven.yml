@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - natacha-rama
+      - produccion
   pull_request:
     branches:
       - main
